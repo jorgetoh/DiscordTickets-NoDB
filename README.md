@@ -4,10 +4,11 @@ This is a simple ticket system for discord. (Still under development 20%)
   <img src="https://i.imgur.com/7GZzPdd.png"/>
 </p>
 
+## Dependencies
+This bot is built with Node.js (v-14.16.1) and discord.js (v-12.5.3) with the add-on discord-buttons (v-4.0.0)
+
 ## Installation
 To keep everything as simple as possible, everything is configurable on [config.json](config.json)
-
-(This bot is built with Node.js 14.16.1 and discord.js 12.5.3)
 
   1. First of all, you need to choose how many modules you want. (You must create a channel and a category for each module you use)
   2. Then, on [config.json](config.json) you must set the bot token and the channels/categories IDs in their modules.
