@@ -1,0 +1,78 @@
+{
+    "bot": {
+        "info": {
+            "token": "BOT SECRET TOKEN HERE",
+            "clientInfo": {
+                "name": "Tickets",
+                "activityName": "Ticket System",
+                "activityType": "PLAYING",
+                "clientStatus": "idle"
+            }
+        },
+        "modules": [
+            {
+                "prefix": "support",
+                "creation-channelID": "864473895049625609",
+                "tickets-categoryID": "864626016239616013",
+                "embedMsg": {
+                    "embedTitle":"Support System",
+                    "embedDesc": "This is the support system of XXXXXX Network, here you can contact with our staff.",
+                    "embedThumbnail": "https://i.imgur.com/koH8WF8.png",
+                    "embedColor": "0x1b982e",
+                    "embedFields": [
+                        {
+                            "name": "Usage information",
+                            "value": "*To create a ticket, you must react using 📩* \n\n • The system will create a channel that can be found on the support category."
+                        },
+                        {
+                            "name": "Caution",
+                            "value": " • You should now that every staff member can access your ticket. \n • If you problem is related with someone within the staff, you should create a ticket on <#864474253609271307>"
+                        }
+                    ]
+                }
+            },
+            {
+                "prefix": "reports",
+                "creation-channelID": "864474253609271307",
+                "tickets-categoryID": "864626082178662430",
+                "embedMsg": {
+                    "embedTitle":"Report System",
+                    "embedDesc": "This is the report system of XXXXXX Network, here you can report any activity that is forbidden in our community.",
+                    "embedThumbnail": "https://i.imgur.com/koH8WF8.png",
+                    "embedColor": "0x1b982e",
+                    "embedFields": [
+                        {
+                            "name": "Usage information",
+                            "value": "*To create a ticket, you must react using 📩* \n\n • The system will create a channel that can be found on the reports category."
+                        },
+                        {
+                            "name": "Caution",
+                            "value": " • This tickets can only be accessed by the High Staff. \n • If you need help with something else, you should create a ticket on <#864473895049625609>"
+                        }
+                    ]
+                }
+            },
+            {
+                "prefix": "appeal",
+                "creation-channelID": "864474275762929694",
+                "tickets-categoryID": "864626100566360075",
+                "embedMsg": {
+                    "embedTitle":"Appeal System",
+                    "embedDesc": "This is the appeal system of XXXXXX Network, here you can apply for a second chance in our community.",
+                    "embedThumbnail": "https://i.imgur.com/koH8WF8.png",
+                    "embedColor": "0x1b982e",
+                    "embedFields": [
+                        {
+                            "name": "Usage information",
+                            "value": "*To create a ticket, you must react using 📩* \n\n • The system will create a channel that can be found on the appeal category."
+                        },
+                        {
+                            "name": "Caution",
+                            "value": " • This tickets can only be accessed by the High Staff. \n • If you need help with something else, you should create a ticket on <#864473895049625609>"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
