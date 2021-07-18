@@ -21,6 +21,11 @@ To add new modules you must add this to the json list: "modules"
     "prefix": "example",
     "creation-channelID": "864473895049625609",
     "tickets-categoryID": "864626016239616013",
+    "rolesID": [
+        {"roleID": "864476652885114881"},
+        {"roleID": "866017913675579403"},
+        {"roleID": "866017969774264350"}
+    ],
     "embedMsg": {
         "embedTitle":"Title",
         "embedDesc": "Description.",
