@@ -26,7 +26,7 @@ To add new modules you must add this to the json list: "modules"
         {"roleID": "866017913675579403"},
         {"roleID": "866017969774264350"}
     ],
-    "embedMsg": {
+    "creationEmbed": {
         "embedTitle":"Title",
         "embedDesc": "Description.",
         "embedThumbnail": "https://i.imgur.com/koH8WF8.png",
