@@ -1,10 +1,10 @@
 {
     "bot": {
         "info": {
-            "token": "BOT SECRET TOKEN HERE",
+            "token": "BOT TOKEN HERE",
             "clientInfo": {
                 "name": "Tickets",
-                "activityName": "Ticket System",
+                "activityName": "🏹",
                 "activityType": "PLAYING",
                 "clientStatus": "idle"
             }
@@ -14,11 +14,16 @@
                 "prefix": "support",
                 "creation-channelID": "864473895049625609",
                 "tickets-categoryID": "864626016239616013",
-                "embedMsg": {
+                "rolesID": [
+                    {"roleID": "864476652885114881"},
+                    {"roleID": "866017913675579403"},
+                    {"roleID": "866017969774264350"}
+                ],
+                "creationEmbed": {
                     "embedTitle":"Support System",
                     "embedDesc": "This is the support system of XXXXXX Network, here you can contact with our staff.",
                     "embedThumbnail": "https://i.imgur.com/koH8WF8.png",
-                    "embedColor": "0x1b982e",
+                    "embedColor": "0x6772e3",
                     "embedFields": [
                         {
                             "name": "Usage information",
@@ -35,11 +40,14 @@
                 "prefix": "reports",
                 "creation-channelID": "864474253609271307",
                 "tickets-categoryID": "864626082178662430",
-                "embedMsg": {
+                "rolesID": [
+                    {"roleID": "864476652885114881"}
+                ],
+                "creationEmbed": {
                     "embedTitle":"Report System",
                     "embedDesc": "This is the report system of XXXXXX Network, here you can report any activity that is forbidden in our community.",
                     "embedThumbnail": "https://i.imgur.com/koH8WF8.png",
-                    "embedColor": "0x1b982e",
+                    "embedColor": "0x6772e3",
                     "embedFields": [
                         {
                             "name": "Usage information",
@@ -56,11 +64,14 @@
                 "prefix": "appeal",
                 "creation-channelID": "864474275762929694",
                 "tickets-categoryID": "864626100566360075",
-                "embedMsg": {
+                "rolesID": [
+                    {"roleID": "864476652885114881"}
+                ],
+                "creationEmbed": {
                     "embedTitle":"Appeal System",
                     "embedDesc": "This is the appeal system of XXXXXX Network, here you can apply for a second chance in our community.",
                     "embedThumbnail": "https://i.imgur.com/koH8WF8.png",
-                    "embedColor": "0x1b982e",
+                    "embedColor": "0x6772e3",
                     "embedFields": [
                         {
                             "name": "Usage information",
