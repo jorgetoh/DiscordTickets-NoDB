@@ -5,19 +5,20 @@ module.exports = client => {
 
     config.setClientInfo(client)
 
-    let botModules = config.getBotModules()
     let ticketChannel
     let embedMessage
-    
+
+    let botModules = config.getBotModules()
+
     for (i in botModules) {
         ticketChannel = client.channels.cache.get(botModules[i]['creation-channelID'])
         ticketChannel.bulkDelete(5)
 
         console.log(`Sending the ticket creation message for channel: ${ticketChannel.name} (${ticketChannel.id})`)
-        embedMessage = config.getEmbedMessage(botModules[i])
-        
-        ticketChannel.send(embedMessage).then(sentEmbed => {
-            sentEmbed.react("📩")
+        embedMessage = config.getCreationEmbed(botModules[i])
+
+        ticketChannel.send(embedMessage).then(message => {
+            message.react('📩')
         })
     }
 }
