@@ -40,6 +40,7 @@ function createNewTicket(module, guild, user) {
 
         channel.send(embedMessage).then(message => {
             message.react('🔒')
+            message.pin()
         })
     })
 }
@@ -69,6 +70,17 @@ function getCreationEmbed(module) {
     }
     return embedMessage
 }
+function getDeletedEmbed(module) {
+    let embedMessage = new Discord.MessageEmbed()
+        .setTitle('Deleting ticket...')
+        .setThumbnail(module['creationEmbed']['embedThumbnail'])
+        .setColor(module['creationEmbed']['embedColor'])
+        .setDescription('The ticket will be deleted in 5 seconds...')
+        .setColor(0xa31a10)
+
+    return embedMessage
+}
+
 
 function getBotModules() {
     return config.bot.modules
@@ -78,5 +90,6 @@ module.exports = {
     setClientInfo,
     getCreationEmbed,
     getBotModules,
-    createNewTicket
+    createNewTicket,
+    getDeletedEmbed
 }
