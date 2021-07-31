@@ -1,4 +1,4 @@
-# Reactive Ticket System [discord.js]
+# Reactive Ticket System [discord.js] [UNDER DEVELOPMENT]
 
 This is a simple ticket system for discord. 
 I coded this bot because all the tickets systems out there had to many unnecessary features and all of them required a database to work properly.
