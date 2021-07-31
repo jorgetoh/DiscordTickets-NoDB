@@ -1,11 +1,13 @@
 # Reactive Ticket System [discord.js]
-This is a simple ticket system for discord. (Still under development 20%)
+
+This is a simple ticket system for discord. 
+I coded this bot because all the tickets systems out there had to many unnecessary features and all of them required a database to work properly.
 <p align="center">
   <img src="https://i.imgur.com/7GZzPdd.png"/>
 </p>
 
 ## Dependencies
-This bot is built with Node.js (v-14.16.1) and discord.js (v-12.5.3) with the add-on discord-buttons (v-4.0.0)
+This bot is built with Node.js (v-14.16.1) and discord.js (v-12.5.3)
 
 ## Installation
 To keep everything as simple as possible, everything is configurable on [config.json](config.json)
