@@ -5,20 +5,34 @@ module.exports = client => {
 
     config.setClientInfo(client)
 
-    let ticketChannel
-    let embedMessage
-
     let botModules = config.getBotModules()
-
+º
+    //For some reason labels don't work so instead I use an auxiliar variable to skip to the first loop. [Try to fix later]
     for (i in botModules) {
-        ticketChannel = client.channels.cache.get(botModules[i]['creation-channelID'])
-        ticketChannel.bulkDelete(5)
-
-        console.log(`Sending the ticket creation message for channel: ${ticketChannel.name} (${ticketChannel.id})`)
-        embedMessage = config.getCreationEmbed(botModules[i])
-
-        ticketChannel.send(embedMessage).then(message => {
-            message.react('📩')
+        let auxiliar = 0
+        let ticketChannel = client.channels.cache.get(botModules[i]['creation-channelID'])
+        ticketChannel.messages.fetchPinned().then(messages => {
+            let messageArray = messages.array()
+            for (j in messageArray) {
+                if (messageArray[j].author.id === client.user.id) {
+                    console.log(`Found the ticket creation message for channel: ${ticketChannel.name} (${ticketChannel.id})`)
+                    auxiliar = 1
+                }
+            }
+            if (auxiliar === 0) {
+                console.log(`Sending the ticket creation message for channel: ${ticketChannel.name} (${ticketChannel.id})`)
+                ticketChannel.send(config.getCreationEmbed(botModules[i])).then(message => {
+                    message.react('📩')
+                    message.pin()
+                })
+            }
+        })
+        
+        let ticketCategory = client.channels.cache.get(botModules[i]['tickets-categoryID'])
+        ticketCategory.children.forEach(channel => {
+            channel.messages.fetchPinned()
         })
     }
+    
+
 }
