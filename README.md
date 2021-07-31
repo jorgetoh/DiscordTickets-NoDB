@@ -7,7 +7,7 @@ I coded this bot because all the tickets systems out there had to many unnecessa
 </p>
 
 ## Dependencies
-This bot is built with Node.js (v-14.16.1) and discord.js (v-12.5.3)
+This bot is built with Node.js (v-14.16.1) and discord.js (v-12.5.3) (No database required)
 
 ## Installation
 To keep everything as simple as possible, everything is configurable on [config.json](config.json)
