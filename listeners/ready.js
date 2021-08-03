@@ -6,7 +6,7 @@ module.exports = client => {
     config.setClientInfo(client)
 
     let botModules = config.getBotModules()
-º
+
     //For some reason labels don't work so instead I use an auxiliar variable to skip to the first loop. [Try to fix later]
     for (i in botModules) {
         let auxiliar = 0
@@ -31,8 +31,15 @@ module.exports = client => {
         let ticketCategory = client.channels.cache.get(botModules[i]['tickets-categoryID'])
         ticketCategory.children.forEach(channel => {
             channel.messages.fetchPinned()
+            channel.permissionOverwrites.find(overWrite => {
+                if (overWrite.type === 'member') {
+                    if (config.usersArray.includes(overWrite.id)) {
+                        return
+                    }
+                    config.usersArray.push(overWrite.id)
+                }
+            })
         })
     }
-    
-
 }
+
