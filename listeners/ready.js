@@ -27,19 +27,19 @@ module.exports = client => {
                 })
             }
         })
-        
+
         let ticketCategory = client.channels.cache.get(botModules[i]['tickets-categoryID'])
-        ticketCategory.children.forEach(channel => {
-            channel.messages.fetchPinned()
-            channel.permissionOverwrites.find(overWrite => {
-                if (overWrite.type === 'member') {
-                    if (config.usersArray.includes(overWrite.id)) {
-                        return
+            ticketCategory.children.forEach(channel => {
+                channel.messages.fetchPinned()
+                channel.permissionOverwrites.find(overWrite => {
+                    if (overWrite.type === 'member') {
+                        if (!config.usersArray.includes(overWrite.id)) {
+                            console.log(`Found a ticket from the user with ID: ${overWrite.id}`)
+                            config.usersArray.push(overWrite.id)
+                        }
                     }
-                    config.usersArray.push(overWrite.id)
-                }
+                })
             })
-        })
     }
 }
 
