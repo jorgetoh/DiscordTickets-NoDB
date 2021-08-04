@@ -4,15 +4,21 @@
             "token": "BOT TOKEN HERE",
             "clientInfo": {
                 "name": "Tickets",
-                "activityName": "🏹",
+                "activityName": "🏹 ticketexample.com",
                 "activityType": "PLAYING",
                 "clientStatus": "idle"
             }
         },
+        "closeTicket": {
+            "embedTitle":"Deleting ticket",
+            "embedDesc": "The ticket will be deleted in 3 seconds...\nIf you need more help you can create a new ticket.",
+            "embedThumbnail": "https://cdn.discordapp.com/attachments/864473895049625608/872187213604065380/koH8WF8.png",
+            "embedColor": "0xa31a10"
+        },
         "modules": [
             {
                 "prefix": "support",
-                "creation-channelID": "864473895049625609",
+                "creation-channelID": "870888539485790269",
                 "tickets-categoryID": "864626016239616013",
                 "rolesID": [
                     {"roleID": "864476652885114881"},
@@ -21,8 +27,8 @@
                 ],
                 "creationEmbed": {
                     "embedTitle":"Support System",
-                    "embedDesc": "This is the support system of XXXXXX Network, here you can contact with our staff.",
-                    "embedThumbnail": "https://i.imgur.com/koH8WF8.png",
+                    "embedDesc": "This is the support system of Ticket Network, here you can contact with our staff.",
+                    "embedThumbnail": "https://cdn.discordapp.com/attachments/864473895049625608/872187213604065380/koH8WF8.png",
                     "embedColor": "0x6772e3",
                     "embedFields": [
                         {
@@ -45,8 +51,8 @@
                 ],
                 "creationEmbed": {
                     "embedTitle":"Report System",
-                    "embedDesc": "This is the report system of XXXXXX Network, here you can report any activity that is forbidden in our community.",
-                    "embedThumbnail": "https://i.imgur.com/koH8WF8.png",
+                    "embedDesc": "This is the report system of Ticket Network, here you can report any activity that is forbidden in our community.",
+                    "embedThumbnail": "https://cdn.discordapp.com/attachments/864473895049625608/872187213604065380/koH8WF8.png",
                     "embedColor": "0x6772e3",
                     "embedFields": [
                         {
@@ -55,7 +61,7 @@
                         },
                         {
                             "name": "Caution",
-                            "value": " • This tickets can only be accessed by the High Staff. \n • If you need help with something else, you should create a ticket on <#864473895049625609>"
+                            "value": " • This tickets can only be accessed by the High Staff. \n • If you need help with something else, you should create a ticket on <#870888539485790269>"
                         }
                     ]
                 }
@@ -69,8 +75,8 @@
                 ],
                 "creationEmbed": {
                     "embedTitle":"Appeal System",
-                    "embedDesc": "This is the appeal system of XXXXXX Network, here you can apply for a second chance in our community.",
-                    "embedThumbnail": "https://i.imgur.com/koH8WF8.png",
+                    "embedDesc": "This is the appeal system of Ticket Network, here you can apply for a second chance in our community.",
+                    "embedThumbnail": "https://cdn.discordapp.com/attachments/864473895049625608/872187213604065380/koH8WF8.png",
                     "embedColor": "0x6772e3",
                     "embedFields": [
                         {
@@ -79,7 +85,7 @@
                         },
                         {
                             "name": "Caution",
-                            "value": " • This tickets can only be accessed by the High Staff. \n • If you need help with something else, you should create a ticket on <#864473895049625609>"
+                            "value": " • This tickets can only be accessed by the High Staff. \n • If you need help with something else, you should create a ticket on <#870888539485790269>"
                         }
                     ]
                 }
