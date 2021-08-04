@@ -1,17 +1,21 @@
 const Discord = require('discord.js')
 const config = require('./config.json')
 
-var ticketAmount = 0
+var usersArray = []
 
-function createNewTicket(module, guild, user) {
-    ticketAmount += 1
-    guild.channels.create(`${module['prefix']}-${ticketAmount}`, {
+async function createNewTicket(module, guild, user) {
+    if (usersArray.includes(user.id)) {
+        return
+    }
+    usersArray.push(user.id)
+
+    await guild.channels.create(`${module['prefix']}-${user.username}`, {
         type: 'text',
         parent: module['tickets-categoryID'],
         permissionOverwrites: [
             {
                 id: guild.roles.everyone.id,
-                deny: ['VIEW_CHANNEL'],
+                deny: ['VIEW_CHANNEL', 'MANAGE_MESSAGES'], 
             },
             {
                 id: user.id,
@@ -19,9 +23,8 @@ function createNewTicket(module, guild, user) {
             },
         ]
     }).then(channel => {
-
-        let strRoles = 'The role(s): '
-        let roleList = module['rolesID']
+        strRoles = 'The role(s): '
+        roleList = module['rolesID']
         for (j in roleList) {
             strRoles = strRoles.concat(`<@&${roleList[j]['roleID']}>, `)
             channel.updateOverwrite(guild.roles.cache.get(roleList[j]['roleID']), { VIEW_CHANNEL: true })
@@ -30,14 +33,14 @@ function createNewTicket(module, guild, user) {
         strRoles = strRoles.substring(0, strRoles.length-2)
         strRoles = strRoles.concat(' can view your ticket.')
 
-        let embedMessage = new Discord.MessageEmbed()
-            .setTitle(`Ticket #${ticketAmount} (${module.prefix})`)
+        embedMessage = new Discord.MessageEmbed()
+            .setTitle(`Ticket - ${user.username} (${module.prefix})`)
             .setDescription(`${user} thanks you for contacting us. Help will be delivered soon.`)
             .setThumbnail(module['creationEmbed']['embedThumbnail'])
             .setColor(module['creationEmbed']['embedColor'])
         
         embedMessage.addField('STAFF Contacted', strRoles)
-
+        channel.send(`Ticket created by: ${user}`)
         channel.send(embedMessage).then(message => {
             message.react('🔒')
             message.pin()
@@ -58,24 +61,23 @@ function setClientInfo(client) {
 }
 
 function getCreationEmbed(module) {
-    let embedMessage = new Discord.MessageEmbed()
+    embedMessage = new Discord.MessageEmbed()
         .setTitle(module['creationEmbed']['embedTitle'])
         .setDescription(module['creationEmbed']['embedDesc'])
         .setThumbnail(module['creationEmbed']['embedThumbnail'])
         .setColor(module['creationEmbed']['embedColor'])
     
-    let embedFields = module['creationEmbed']['embedFields']
+    embedFields = module['creationEmbed']['embedFields']
     for (j in embedFields) {
         embedMessage.addField(embedFields[j]['name'], embedFields[j]['value'])
     }
     return embedMessage
 }
-function getDeletedEmbed(module) {
-    let embedMessage = new Discord.MessageEmbed()
-        .setTitle('Deleting ticket...')
-        .setThumbnail(module['creationEmbed']['embedThumbnail'])
-        .setColor(module['creationEmbed']['embedColor'])
-        .setDescription('The ticket will be deleted in 5 seconds...')
+function getDeletedEmbed() {
+    embedMessage = new Discord.MessageEmbed()
+        .setTitle(config.bot.closeTicket.embedTitle)
+        .setThumbnail(config.bot.closeTicket.embedThumbnail)
+        .setDescription(config.bot.closeTicket.embedDesc)
         .setColor(0xa31a10)
 
     return embedMessage
@@ -91,5 +93,6 @@ module.exports = {
     getCreationEmbed,
     getBotModules,
     createNewTicket,
-    getDeletedEmbed
+    getDeletedEmbed,
+    usersArray
 }
