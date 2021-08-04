@@ -1,4 +1,4 @@
-# Reactive Ticket System [discord.js]
+# Ticket System [discord.js] (No database)
 
 This is a simple ticket system for discord. 
 I coded this bot because all the tickets systems out there had to many unnecessary features and all of them required a database to work properly.
@@ -12,10 +12,21 @@ This bot is built with Node.js (v-14.16.1) and discord.js (v-12.5.3) (No databas
 ## Installation
 To keep everything as simple as possible, everything is configurable on [config.json](config.json)
 
-  1. First of all, you need to choose how many modules you want. (You must create a channel and a category for each module you use)
-  2. Then, on [config.json](config.json) you must set the bot token and the channels/categories IDs in their modules.
-  3. When you set everything up, you can run the bot using "node index.js"
+  * You can find a better explanation at this tutorial: www.youtube.com/jorgetoh
 
+(On this example we will we working with three modules)
+  1. First of all, you need to setup the discord server with the ticket creation channels and their respective categories. (To allow everything to work properly, nobody should be allowed to write on the creation channels and there should be no channel on the tickets categories)
+  2. With the developer mode you should be able to copy the channels ID and set everything up on the [config.json](config.json)
+  3. You can touch up the embed messages on [config.json](config.json) to set it as your liking.
+  4. You should change the rolesID section to let your staff view the tickets. (You must use roles ID)
+  5. Set your bot token on the info section ([config.json](config.json)) and everything is ready to go.
+
+This is how the channels should look before running the bot for the first time:
+<p align="center">
+  <img src="https://i.imgur.com/WbN2iw2.png"/>
+</p>
+NOTE: The creation embed messages will be sent if they are not found in their respective channels when the bot starts so if you want to modify one, just delete it and reload the bot.
+ 
 ### Module syntax 
 To add new modules you must add this to the json list: "modules"
 ```json
