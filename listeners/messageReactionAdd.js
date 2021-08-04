@@ -1,6 +1,6 @@
 const config = require('../config.js')
 
-module.exports = async (bot, reaction, user) => {
+module.exports = async (client, reaction, user) => {
     
     if (reaction.message.partial) {
         await reaction.message.fetch()
@@ -9,7 +9,7 @@ module.exports = async (bot, reaction, user) => {
         await reaction.fetch()
     }
   
-    let message = reaction.message
+    message = reaction.message
 
     if (!message) {
         return
@@ -19,24 +19,28 @@ module.exports = async (bot, reaction, user) => {
     }
     switch (reaction.emoji.name) {
         case '📩':
-            var botModules = config.getBotModules()
+            botModules = config.getBotModules()
             for (i in botModules) {
                 if (botModules[i]['creation-channelID'] === message.channel.id) {
-                    reaction.users.remove(user.id)
-                    config.createNewTicket(botModules[i], message.guild, user)
+                    await reaction.users.remove(user.id)
+                    await config.createNewTicket(botModules[i], message.guild, user)
                     return
                 }
             }
             break
         case '🔒':
-            var botModules = config.getBotModules()
+            botModules = config.getBotModules()
             for (i in botModules) {
                 if (botModules[i]['tickets-categoryID'] === message.channel.parent.id) {
-                    reaction.users.remove(user.id)
-                    message.channel.send('Removing ticket in 5 seconds...')
-                    setTimeout(function(){ 
+                    await reaction.users.remove(user.id)
+                    await message.channel.send(config.getDeletedEmbed())
+                    setTimeout(function(){
                         message.channel.delete()
-                     }, 5000);
+                        index = config.usersArray.indexOf(user.id);
+                        if (index > -1) {
+                            config.usersArray.splice(index, 1);
+                        }
+                     }, 3000);
                     return
                 }
             }
