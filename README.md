@@ -14,17 +14,12 @@ To keep everything as simple as possible, everything is configurable on [config.
 
   * You can find a better explanation at this tutorial: www.youtube.com/jorgetoh
 
-(On this example we will we working with three modules)
   1. First of all, you need to setup the discord server with the ticket creation channels and their respective categories. (To allow everything to work properly, nobody should be allowed to pin messages on the creation channels)
   2. With the developer mode you should be able to copy the channels ID and set everything up on the [config.json](config.json)
   3. You can touch up the embed messages on [config.json](config.json) to set it as your liking.
   4. You should change the rolesID section to let your staff view the tickets. (You must use roles ID)
   5. Set your bot token on the info section ([config.json](config.json)) and everything is ready to go.
 
-This is how the channels should look before running the bot for the first time:
-<p align="center">
-  <img src="https://i.imgur.com/WbN2iw2.png"/>
-</p>
 NOTE: The creation embed messages will be sent if they are not found in their respective channels when the bot starts so if you want to modify one, just delete it and reload the bot.
  
 ### Module syntax 
