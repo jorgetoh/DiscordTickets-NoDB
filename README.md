@@ -23,7 +23,8 @@ To keep everything as simple as possible, everything is configurable on [config.
 NOTE: The creation embed messages will be sent if they are not found in their respective channels when the bot starts so if you want to modify one, just delete it and reload the bot.
  
 ### Ticket Modules
-Ticket modules allow you to have several independent ticket systems on the same server. 
+Ticket modules allow you to have several independent ticket systems on the same server.
+
 To add new modules you must add a new entry on the config section "modules"
 ```json
 {
