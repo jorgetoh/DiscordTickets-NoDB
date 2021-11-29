@@ -12,8 +12,6 @@ This bot is built with Node.js (v-14.16.1) and discord.js (v-12.5.3) (No databas
 ## Installation
 To keep everything as simple as possible, everything is configurable on [config.json](config.json)
 
-  * You can find a better explanation at this tutorial: www.youtube.com/jorgetoh
-
   1. First of all, you need to setup the discord server with the ticket creation channels and their respective categories. (To allow everything to work properly, nobody should be allowed to pin messages on the creation channels)
   2. With the developer mode you should be able to copy the channels ID and set everything up on the [config.json](config.json)
   3. You can touch up the embed messages on [config.json](config.json) to set it as your liking.
