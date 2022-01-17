@@ -1,4 +1,4 @@
-# Ticket System [discord.js] (No database)
+# Ticket System [discord.js] (No database) V12
 
 This is a simple ticket system for discord. 
 I coded this bot because all the tickets systems out there had to many unnecessary features and all of them required a database to work properly.
